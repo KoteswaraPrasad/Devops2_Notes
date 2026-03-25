@@ -1,0 +1,36 @@
+docker --version
+docker info
+docker history httpd
+docker pull httpd
+docker image
+docker run (options) image (argument)
+
+options :-
+
+-it -> runs the container in interactive mode, allowing you to interact with the container through the command line
+-d -> runs the conatainer in the background
+-p -> port number mapping
+
+
+Running a container with a specific name :
+    docker run --name my-container httpd echo "hello world"
+
+Environment Variables 
+Need of Environment Variables
+
+    Without -e :
+        Configuration must be hard-coded in the image
+        Need to rebuild image for every change
+    
+    With -e :
+
+
+Setting Environment :
+    
+    docker run -e MY_VAR=value httpd env
+    this command sets an Environment Variable "MY_VAR" to the value "value" and runs a new container from the httpd image
+
+Multiple Environment Variables
+
+Passing Environment Variable from Host System
+
