@@ -67,3 +67,63 @@ docker rm container_id -> to remove stopped container
 docker rm -f container_id -> to remove running containers
 docker rmi image_id -> to remove image with no containers
 docker rmi -f image_id -> removing image with running containers forcefully
+
+
+Task :
+
+Inside this same running cotainer you are required to :
+
+-create a new directory named /project 
+(docker exec -it <container_name_or_id> /bin/bash)
+(mkdir /project)
+
+-Inside /project , create a file called report.txt
+-add the following text inside the file:
+This is our container interaction with our host machine
+(echo "This is our container interaction with our host machine" > /project/report.txt)
+
+-Verify the file content
+(cat /project/report.txt)
+
+-Copy report.txt from the container to your desktop
+(docker cp <container_name>:/project/report.txt C:\Users\Koteswara_prasad\OneDrive\Desktop)
+
+-Create another file named notes.txt in the same /project directory
+-Append the text :
+(echo "This is notes.txt" >> /project/notes.txt)
+
+-Verify that both files exist inside /project
+(ls /project)
+
+
+
+Practice Questions:
+
+1) You need to start a new container using the nginx image while setting an environment Variable
+ENV_MODE=production 
+Write the docker run command to achieve this.
+
+(docker -d -p 8080:81 --name my_nginx -e ENV_MODE=production nginx)
+
+2) You have a running container named my_app, but its not behaving as expected.You want to check its logs to debug any errors.
+Write the command to view its logs and follow new log entries in real time
+
+(docker logs -f container_name_or_id)
+
+
+
+docker network ls
+
+docker network inspect bridge
+
+docker network create my_bridge_net
+
+docker run -d --name container1 --network my_bridge_net nginx
+docker run -d --name container2 --network my_bridge_net alpine sleep 300
+
+docker exec -it container2 ping container1 
+
+
+Create Volume - docker volume create my_volume
+
+
