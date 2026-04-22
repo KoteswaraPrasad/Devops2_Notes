@@ -127,3 +127,5 @@ docker exec -it container2 ping container1
 Create Volume - docker volume create my_volume
 
 
+GHCR (GitHub Container Registry) is Docker container registry service provided by GitHub. 
+It allows you to store, manage, and share Docker container images directly within your GitHub account.
