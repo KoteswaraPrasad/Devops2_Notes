@@ -1,0 +1,22 @@
+Task 1:
+
+A company wants to deploy a 3-tier web application using Docker Compose :
+Frontend -> React(Node.js)
+Backend -> Spring Boot API
+Database -> PostgresSQL
+Requirements : All services must communicate
+
+All services must communicate 
+Environment variables should be used
+Data should persist using volumes
+Services must start in dependancy order
+
+
+
+Task 2:
+
+Deploy a WordPress website using Docker Compose with MySQL as the database.Requirements:
+WordPress runs on port 8080 
+MySQL uses persistent storage 
+Use environment variables for DB configuration 
+Ensure proper service dependency
